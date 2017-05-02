@@ -6,7 +6,6 @@ namespace SpecflowParallelTest
 {
     class ExtentManager
     {
-
         private static readonly ExtentReports _instance = new ExtentReports();
 
         static ExtentManager()
@@ -27,5 +26,6 @@ namespace SpecflowParallelTest
                 return _instance;
             }
         }
+
     }
 }

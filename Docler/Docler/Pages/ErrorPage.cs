@@ -9,7 +9,7 @@ namespace SpecflowParallelTest.Pages
     [Binding]
     class ErrorPage
     {
-        
+
         public static By ERROR_MENU_BUTTON = By.CssSelector("a#error");
         public static By ERROR_MENU_BUTTON_CONTAINER = By.XPath("//*/a[@id='error']/../../li[@class='active']");
         public static By ERROR_H1 = By.CssSelector("h1");
@@ -19,20 +19,11 @@ namespace SpecflowParallelTest.Pages
         private IWebDriver _driver;
         private ExtentTest _test;
         private CommonPage _commonPage;
-        //private HomePage _homePage;
-        //private FormPage _formPage;
 
         public ErrorPage(IWebDriver driver, ExtentTest test, CommonPage commonPage)
         {
             _driver = driver;
-            //_test = test;
-            //_extent = ExtentManager.Instance;
-            //_test = test;
-            //_scenarioContext = scenarioContext;
-            //_homePage = homePage;
             _commonPage = commonPage;
-            //_formPage = formPage;
-
         }
 
         public Boolean isPageLoadedProperly()

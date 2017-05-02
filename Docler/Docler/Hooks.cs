@@ -1,18 +1,10 @@
 ﻿using AventStack.ExtentReports;
-using AventStack.ExtentReports.Reporter;
 using BoDi;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace SpecflowParallelTest
@@ -22,14 +14,9 @@ namespace SpecflowParallelTest
     {
 
         private readonly IObjectContainer _objectContainer;
-
         private IWebDriver _driver;
-
         private ExtentReports _extent;
-
         private ExtentTest _test;
-
-        //private ScenarioContext _scenarioContext;
 
         public Hooks(IObjectContainer objectContainer)
         {
@@ -38,16 +25,7 @@ namespace SpecflowParallelTest
         }
 
         [BeforeTestRun]
-        protected static void Setup()
-        {
-            //var dir = "C:\\Users\\vp05\\Documents\\Visual Studio 2015\\Projects\\SpecflowSeleniumParallel-master\\SpecflowParallelTest\\bin\\Debug\\";
-            //var fileName = "SpecflowParallelTest.html";
-            //var htmlReporter = new ExtentHtmlReporter(dir + fileName);
-            //extent = new ExtentReports();
-            //extent.AttachReporter(htmlReporter);
-        }
-
-        
+        protected static void Setup() { }
 
         [BeforeScenario]
         public void Initialize()
@@ -73,18 +51,13 @@ namespace SpecflowParallelTest
         public void CleanUp()
         {
             _extent.Flush();
-            
             Thread.Sleep(2000);
             _driver.Quit();
-            //_driver.Close();
             Thread.Sleep(1000);
         }
 
         [AfterTestRun]
-        protected static void TearDown()
-        {
-            //ExtentManager.Instance.Flush();
-        }    
+        protected static void TearDown() { }
 
     }
 }

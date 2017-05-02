@@ -32,9 +32,6 @@ namespace SpecflowParallelTest.Pages
         {
             _driver = driver;
             _test = test;
-            //_extent = ExtentManager.Instance;
-            //_test = test;
-            //_scenarioContext = scenarioContext;
             _homePage = new HomePage(_driver, _test, this);
             _formPage = new FormPage(_driver, _test, this);
             _errorPage = new ErrorPage(_driver, _test, this);
@@ -65,28 +62,11 @@ namespace SpecflowParallelTest.Pages
                 }
 
             }
-            //_driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(5));
-            //_driver.Navigate().GoToUrl(url);
-
-            //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(4));
 
             IWebElement homeMenuButton;
             IWebElement homePageH1;
             String homeButtonClass = "";
             String homePageH1Text = "";
-            //try
-            //{
-            //    homeMenuButton = _driver.FindElement(By.CssSelector("li.active > a#home"));
-            //    homeMenuButton = _driver.FindElement(By.XPath("//*/a[@id='home']/../../li[@class='active']"));
-            //    homeButtonClass = homeMenuButton.GetAttribute("class"); //has to be li.active
-            //    homePageH1 = _driver.FindElement(By.CssSelector("div.ui-test > h1"));
-            //    homePageH1Text = homePageH1.Text;
-            //}
-            //catch (Exception ex)
-            //{
-            //    homeMenuButton = null;
-            //    homePageH1 = null;
-            //}
 
             homeMenuButton = this.findElement(HomePage.HOME_MENU_BUTTON_CONTAINER);
             homeButtonClass = homeMenuButton.GetAttribute("class"); //has to be li.active
@@ -103,25 +83,16 @@ namespace SpecflowParallelTest.Pages
                 _test.Log(Status.Fail, "Failed");
                 return false;
             }
-            //homeMenuButton = this.findElement(HomePage.HOME_MENU_BUTTON);
 
         }
 
 
 
-        //public Boolean navigateToPage(Table table)
-        //public Boolean navigateToPage(IList<dynamic> pages)
         public Boolean navigateToPage(String page)
         {
             Boolean b = false;
-            //dynamic data = table.CreateDynamicInstance();
             IWebElement menuButton;
             String str = page;
-            //foreach(var page in pages)
-            //{
-            //    //str = "Bazdmeg, hogy nincs minden objecten ToString()";
-            //    str = page.pages;
-            //}
             if (str.Equals("Home"))
             {
                 menuButton = _driver.FindElement(HomePage.HOME_MENU_BUTTON);
@@ -176,7 +147,6 @@ namespace SpecflowParallelTest.Pages
             foreach (By by in bys)
             {
                 IWebElement webElement = this.findElement(by);
-                //webElement == null ? return true  : false;
                 if (webElement == null)
                 {
                     _test.Log(Status.Fail, "Some elements were not found.");
@@ -256,7 +226,6 @@ namespace SpecflowParallelTest.Pages
             }
             if (webElement.Text.Equals(p1))
             {
-                //_test.Log(Status.Pass, "Tag and text called " + p0.ToString() + " and " + p1 + " was found and clicked.");
                 _test.Log(Status.Pass, "Tag and text called " + p0 + " and " + p1 + " was found.");
                 return true;
             }

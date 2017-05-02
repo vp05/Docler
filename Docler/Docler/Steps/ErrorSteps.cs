@@ -12,7 +12,6 @@ namespace SpecflowParallelTest.Steps
     public class ErrorSteps
     {
         private IWebDriver _driver;
-        private ExtentReports _extent;
         private ExtentTest _test;
         private ScenarioContext _scenarioContext;
 
@@ -22,10 +21,8 @@ namespace SpecflowParallelTest.Steps
         public ErrorSteps(IWebDriver driver, ExtentTest test, ScenarioContext scenarioContext)
         {
             _driver = driver;
-            //_extent = ExtentManager.Instance;
             _test = test;
             _scenarioContext = scenarioContext;
-
             _commonPage = new CommonPage(_driver, _test);
             _errorPage = new ErrorPage(_driver, _test, _commonPage);
         }
@@ -35,7 +32,6 @@ namespace SpecflowParallelTest.Steps
         {
             Assert.IsTrue(_errorPage.checkHTTPResponse(p0));
         }
-
 
     }
 }

@@ -12,25 +12,19 @@ namespace SpecflowParallelTest.Steps
     public class FormSteps
     {
         private IWebDriver _driver;
-        private ExtentReports _extent;
         private ExtentTest _test;
         private ScenarioContext _scenarioContext;
-
         private CommonPage _commonPage;
         private FormPage _formPage;
 
         public FormSteps(IWebDriver driver, ExtentTest test, ScenarioContext scenarioContext)
         {
             _driver = driver;
-            //_extent = ExtentManager.Instance;
             _test = test;
             _scenarioContext = scenarioContext;
-
             _commonPage = new CommonPage(_driver, _test);
             _formPage = new FormPage(_driver, _test, _commonPage);
         }
-
-
 
         [When(@"I type (.*) into the input box")]
         public void WhenITypeIntoTheInputBox(string p0)
@@ -69,7 +63,5 @@ namespace SpecflowParallelTest.Steps
             Assert.IsTrue(_commonPage.findElement(FormPage.SUBMIT_BUTTON) != null ? true : false);
         }
 
-
     }
-
 }

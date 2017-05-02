@@ -49,27 +49,21 @@ namespace SpecflowParallelTest.Pages
         public Boolean writeTextIntoElement(String text)
         {
             IWebElement webElement = _commonPage.findElement(INPUT_BOX);
-            if(webElement == null)
+            if (webElement == null)
             {
                 _test.Log(Status.Fail, "Couldn't find webElement.");
                 return false;
             }
             Thread.Sleep(1000);
             webElement.SendKeys(text);
-            //webElement = _commonPage.findElement(INPUT_BOX);
-            //if(webElement == null || !webElement.Text.Equals(text))
-            //{
-            //    _test.Log(Status.Fail, "Couldn't find webElement or the expected test does not equal:\nExpected: " + text + "\nActual: " + webElement.Text);
-            //    return false;
-            //}
-            _test.Log(Status.Pass, "Writing text " + text + " into input box was successful.");            
+            _test.Log(Status.Pass, "Writing text " + text + " into input box was successful.");
             return true;
         }
 
         public Boolean checkHelloText(String helloText)
         {
             IWebElement webElement = _commonPage.findElement(HELLO_TEXT);
-            if(webElement == null)
+            if (webElement == null)
             {
                 _test.Log(Status.Fail, "Couldn't find webElement.");
                 return false;
