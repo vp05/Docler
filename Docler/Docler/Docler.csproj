@@ -81,58 +81,62 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ExtentManager.cs" />
-    <Compile Include="Features\Common.feature.cs">
+    <Compile Include="features\Common.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Error.feature.cs">
+    <Compile Include="features\Error.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Error.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Form.feature.cs">
+    <Compile Include="features\Form.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Form.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Home.feature.cs">
+    <Compile Include="features\Home.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Home.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks.cs" />
-    <Compile Include="Pages\CommonPage.cs" />
-    <Compile Include="Pages\ErrorPage.cs" />
-    <Compile Include="Pages\FormPage.cs" />
-    <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Steps\CommonSteps.cs" />
-    <Compile Include="Steps\ErrorSteps.cs" />
-    <Compile Include="Steps\FormSteps.cs" />
-    <Compile Include="Steps\HomeSteps.cs" />
+    <Compile Include="pages\CommonPage.cs" />
+    <Compile Include="pages\ErrorPage.cs" />
+    <Compile Include="pages\FormPage.cs" />
+    <Compile Include="pages\HomePage.cs" />
+    <Compile Include="steps\CommonSteps.cs" />
+    <Compile Include="steps\ErrorSteps.cs" />
+    <Compile Include="steps\FormSteps.cs" />
+    <Compile Include="steps\HomeSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\Common.feature">
+    <None Include="features\Common.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Common.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Error.feature">
+    <None Include="features\Error.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Error.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Form.feature">
+    <None Include="features\Form.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Form.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\Home.feature">
+    <None Include="features\Home.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Home.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="reports\Extent 20170502-202549.629.html" />
+    <Content Include="resources\chromedriver.exe" />
+    <Content Include="resources\geckodriver.exe" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
